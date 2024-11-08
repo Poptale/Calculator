@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="dot" data-cursor-dot></div>
+    <div class="outline" data-cursor-outline></div>
+    <div class="container">
+        <div class="logo-container">
+            <svg class = "svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#000000" d="M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-384c0-35.3-28.7-64-64-64L64 0zM96 64l192 0c17.7 0 32 14.3 32 32l0 32c0 17.7-14.3 32-32 32L96 160c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32zm32 160a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM96 352a32 32 0 1 1 0-64 32 32 0 1 1 0 64zM64 416c0-17.7 14.3-32 32-32l96 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-96 0c-17.7 0-32-14.3-32-32zM192 256a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zm64-64a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM288 448a32 32 0 1 1 0-64 32 32 0 1 1 0 64z"/></svg>
+            <svg id = "svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#bababa" d="M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-384c0-35.3-28.7-64-64-64L64 0zM96 64l192 0c17.7 0 32 14.3 32 32l0 32c0 17.7-14.3 32-32 32L96 160c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32zm32 160a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM96 352a32 32 0 1 1 0-64 32 32 0 1 1 0 64zM64 416c0-17.7 14.3-32 32-32l96 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-96 0c-17.7 0-32-14.3-32-32zM192 256a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zm64-64a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM288 448a32 32 0 1 1 0-64 32 32 0 1 1 0 64z"/></svg>
+            <h1>Calculator</h1>
+        </div>
+
+        <div class="mode-container">
+            <img class="mode-img" src="brightness.png" alt="Change mode">
+        </div>
+
+        <div class="calculator-layout">
+            <input class="input-value input" type="text" placeholder="Enter values" readonly>
+            <div class="buttons-container">
+                <button onclick="numbers = ''; document.querySelector('.input-value').value = numbers; clickSound.play();" class="number special-buttons border-buttons1">AC</button>
+                <button onclick="numbers = ''; document.querySelector('.input-value').value = numbers; clickSound.play();" class="number special-buttons">C</button>
+                <button onclick="handleButtonClick('*100'); clickSound.currentTime = 0; clickSound.play();" class="number special-buttons">%</button>
+                <button onclick="handleButtonClick('/'); clickSound.currentTime = 0; clickSound.play();" class="number special-buttons border-buttons2">÷</button>
+                <button onclick="handleButtonClick('7'); clickSound.currentTime = 0; clickSound.play();" class="number">7</button>
+                <button onclick="handleButtonClick('8'); clickSound.currentTime = 0; clickSound.play();" class="number">8</button>
+                <button onclick="handleButtonClick('9'); clickSound.currentTime = 0; clickSound.play();" class="number">9</button>
+                <button onclick="handleButtonClick('*'); clickSound.currentTime = 0; clickSound.play();" class="number special-buttons">×</button>
+                <button onclick="handleButtonClick('4'); clickSound.currentTime = 0; clickSound.play();" class="number">4</button>
+                <button onclick="handleButtonClick('5'); clickSound.currentTime = 0; clickSound.play();" class="number">5</button>
+                <button onclick="handleButtonClick('6'); clickSound.currentTime = 0; clickSound.play();" class="number">6</button>
+                <button onclick="handleButtonClick('-'); clickSound.currentTime = 0; clickSound.play();" class="number special-buttons">-</button>
+                <button onclick="handleButtonClick('1'); clickSound.currentTime = 0; clickSound.play();" class="number">1</button>
+                <button onclick="handleButtonClick('2'); clickSound.currentTime = 0; clickSound.play();" class="number">2</button>
+                <button onclick="handleButtonClick('3'); clickSound.currentTime = 0; clickSound.play();" class="number">3</button>
+                <button onclick="handleButtonClick('+'); clickSound.currentTime = 0; clickSound.play();" class="number special-buttons">+</button>
+                <button onclick="handleButtonClick('00'); clickSound.currentTime = 0; clickSound.play();" class="number border-buttons4">00</button>
+                <button onclick="handleButtonClick('0'); clickSound.currentTime = 0; clickSound.play();" class="number">0</button>
+                <button onclick="handleButtonClick('.'); clickSound.currentTime = 0; clickSound.play();" class="number">.</button>
+                <button onclick="specialNumbers(); clickSound.currentTime = 0; clickSound.play();" class="number special-buttons border-buttons3">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
